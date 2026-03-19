@@ -11,9 +11,9 @@
 }
 
 @font-face {
-  font-family: "Space Grotesk";
-  src: url("/fonts/SpaceGrotesk-Variable.woff2") format("woff2");
-  font-weight: 300 700;
+  font-family: "Syne";
+  src: url("/fonts/Syne-Variable.ttf") format("truetype");
+  font-weight: 400 800;
   font-style: normal;
   font-display: swap;
 }
@@ -22,15 +22,17 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Syne", "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --color-bg: #0a0a0a;
-  --color-surface: #141414;
-  --color-text: #e8e8e8;
-  --color-text-muted: #8a8a8a;
-  --color-accent: #d4a853;
-  --color-accent-hover: #e6be6a;
-  --color-border: rgba(255, 255, 255, 0.06);
+  --color-bg: #050505;
+  --color-bg-elevated: #0b0d10;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-text: #f3f5f7;
+  --color-text-muted: #8f98a3;
+  --color-accent: #9fd4ff;
+  --color-accent-strong: #d9ecff;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(255, 255, 255, 0.08);
   --color-error: #ef4444;
   --color-success: #22c55e;
 }
@@ -45,11 +47,32 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-size: 1.125rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.65;
+  letter-spacing: -0.015em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  letter-spacing: -0.055em;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    opacity 180ms ease,
+    transform 180ms ease;
 }
 
 ::selection {
@@ -75,7 +98,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-text-muted);
+  background: rgba(159, 212, 255, 0.3);
   border-radius: 3px;
 }
 

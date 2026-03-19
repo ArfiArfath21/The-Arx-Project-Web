@@ -3,32 +3,46 @@ import { PROBLEM } from "../lib/constants";
 
 export default function Problem() {
   return (
-    <section id="problem" className="py-24 md:py-32 lg:py-40 px-6">
-      <div className="max-w-3xl mx-auto">
-        <ScrollReveal>
-          <h2
-            className="font-heading font-semibold text-text leading-tight"
-            style={{ fontSize: "clamp(1.75rem, 3.5vw, 3rem)" }}
-          >
-            {PROBLEM.headline}
-          </h2>
-        </ScrollReveal>
+    <section id="problem" className="px-5 py-24 sm:px-6 md:py-32 lg:px-10 lg:py-36">
+      <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+          <ScrollReveal>
+            <p className="text-[0.66rem] uppercase tracking-[0.34em] text-text-muted">
+              {PROBLEM.eyebrow}
+            </p>
+          </ScrollReveal>
 
-        <div className="mt-10 space-y-6">
-          {PROBLEM.paragraphs.map((paragraph, i) => (
-            <ScrollReveal key={i} delay={i * 0.1}>
-              <p className="text-text-muted">{paragraph}</p>
-            </ScrollReveal>
-          ))}
+          <ScrollReveal delay={0.08}>
+            <h2
+              className="mt-5 max-w-lg font-heading font-semibold leading-[0.92] text-text"
+              style={{ fontSize: "clamp(2.4rem, 5vw, 5rem)" }}
+            >
+              {PROBLEM.headline}
+            </h2>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.16}>
+            <blockquote className="mt-10 rounded-[1.8rem] border border-accent/15 bg-white/[0.03] p-6 backdrop-blur-xl">
+              <p className="text-lg italic leading-relaxed text-text/90 md:text-xl">
+                "{PROBLEM.quote}"
+              </p>
+            </blockquote>
+          </ScrollReveal>
         </div>
 
-        <ScrollReveal delay={PROBLEM.paragraphs.length * 0.1 + 0.1}>
-          <blockquote className="mt-12 pl-6 border-l-[3px] border-accent">
-            <p className="text-lg md:text-xl italic text-text/90 leading-relaxed">
-              "{PROBLEM.quote}"
-            </p>
-          </blockquote>
-        </ScrollReveal>
+        <div className="lg:col-span-7 lg:col-start-6">
+          <div className="space-y-6 md:space-y-7">
+            {PROBLEM.paragraphs.map((paragraph, i) => (
+              <ScrollReveal key={i} delay={i * 0.08}>
+                <div className="border-l border-white/10 pl-5 md:pl-7">
+                  <p className="max-w-2xl text-base leading-relaxed text-text-muted md:text-lg">
+                    {paragraph}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

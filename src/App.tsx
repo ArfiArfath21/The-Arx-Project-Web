@@ -12,7 +12,7 @@ export default function App() {
     <>
       <BackgroundEffects />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Problem />
         <HowItWorks />

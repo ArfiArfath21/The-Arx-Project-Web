@@ -3,70 +3,76 @@ import { motion } from "framer-motion";
 export default function BackgroundEffects() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden="true">
-      {/* Base gradient — not flat black, subtle warm-to-cool shift */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, #0a0a0a 0%, #0d0b08 25%, #0a0a0e 50%, #0c0a08 75%, #0a0a0a 100%)",
+            "radial-gradient(circle at top left, rgba(159,212,255,0.1), transparent 30%), radial-gradient(circle at 78% 22%, rgba(217,236,255,0.08), transparent 28%), linear-gradient(180deg, #040404 0%, #06080b 44%, #040404 100%)",
         }}
       />
 
-      {/* Ambient orb — top right, warm amber */}
       <motion.div
-        className="absolute -top-[200px] -right-[200px] w-[800px] h-[800px] rounded-full"
+        className="absolute -top-[18rem] left-[8%] h-[32rem] w-[32rem] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(212,168,83,0.04) 0%, rgba(212,168,83,0.01) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(159,212,255,0.16) 0%, rgba(159,212,255,0.04) 45%, transparent 75%)",
         }}
         animate={{
-          x: [0, 30, -20, 0],
-          y: [0, -20, 30, 0],
+          x: [0, 26, -18, 0],
+          y: [0, -20, 24, 0],
         }}
         transition={{
-          duration: 25,
+          duration: 22,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* Ambient orb — center left, subtle cool tone */}
       <motion.div
-        className="absolute top-[40%] -left-[300px] w-[900px] h-[900px] rounded-full"
+        className="absolute right-[6%] top-[18%] h-[26rem] w-[26rem] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(140,160,200,0.025) 0%, rgba(140,160,200,0.008) 40%, transparent 65%)",
+            "radial-gradient(circle, rgba(217,236,255,0.14) 0%, rgba(217,236,255,0.04) 38%, transparent 72%)",
         }}
         animate={{
-          x: [0, -25, 15, 0],
-          y: [0, 40, -30, 0],
+          x: [0, -22, 18, 0],
+          y: [0, 28, -18, 0],
         }}
         transition={{
-          duration: 30,
+          duration: 28,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* Ambient orb — bottom, warm accent */}
       <motion.div
-        className="absolute -bottom-[200px] right-[20%] w-[700px] h-[700px] rounded-full"
+        className="absolute bottom-[-10rem] left-[34%] h-[28rem] w-[28rem] rounded-full blur-3xl"
         style={{
           background:
-            "radial-gradient(circle, rgba(212,168,83,0.03) 0%, transparent 60%)",
+            "radial-gradient(circle, rgba(118,152,180,0.18) 0%, rgba(118,152,180,0.05) 40%, transparent 74%)",
         }}
         animate={{
-          x: [0, 20, -30, 0],
-          y: [0, -25, 15, 0],
+          x: [0, 18, -22, 0],
+          y: [0, -16, 20, 0],
         }}
         transition={{
-          duration: 20,
+          duration: 24,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      {/* Noise texture overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)",
+          backgroundSize: "min(11vw, 120px) min(11vw, 120px)",
+          maskImage:
+            "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 18%, rgba(0,0,0,1) 50%, rgba(0,0,0,0.7) 82%, transparent 100%)",
+        }}
+      />
+
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -76,12 +82,15 @@ export default function BackgroundEffects() {
         }}
       />
 
-      {/* Subtle vignette */}
+      <div className="absolute inset-y-0 left-[8%] hidden w-px bg-white/10 lg:block" />
+      <div className="absolute inset-y-0 right-[8%] hidden w-px bg-white/10 lg:block" />
+      <div className="absolute left-0 right-0 top-[18%] hidden h-px bg-white/8 lg:block" />
+
       <div
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.4) 100%)",
+            "radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,0.48) 100%)",
         }}
       />
     </div>

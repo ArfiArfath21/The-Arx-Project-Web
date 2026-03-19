@@ -2,19 +2,43 @@ export const NAV = {
   brand: "The Arx Project",
   links: [
     { label: "Problem", href: "#problem" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "System", href: "#how-it-works" },
     { label: "Behaviours", href: "#behaviours" },
   ],
 } as const;
 
 export const HERO = {
+  eyebrow: "Personal memory layer",
   headline: "The version of you that never forgets.",
   subheadline:
     "Arx is a personal memory layer. Tell it what you encounter. It remembers, connects, and gives it back to you when you need it.",
   supporting: "For curious people who consume a lot and remember too little.",
+  rail: [
+    { label: "Input", value: "Voice, text, image" },
+    { label: "Mode", value: "Private by default" },
+    { label: "Use case", value: "Real recall in conversation" },
+  ],
+  signals: [
+    {
+      stamp: "01",
+      title: "Capture",
+      text: "A chapter finished. A rabbit hole opened. A line worth keeping.",
+    },
+    {
+      stamp: "02",
+      title: "Thread",
+      text: "Patterns connect before memory has the chance to flatten them.",
+    },
+    {
+      stamp: "03",
+      title: "Recall",
+      text: "Ask what you know and get back something you can actually use.",
+    },
+  ],
 } as const;
 
 export const PROBLEM = {
+  eyebrow: "Why it disappears",
   headline: "You've read it. Watched it. Learned it. And then it's gone.",
   paragraphs: [
     "You're curious. You go deep on things — books, shows, history, rabbit holes at midnight. You genuinely enjoy learning.",
@@ -28,6 +52,7 @@ export const PROBLEM = {
 } as const;
 
 export const HOW_IT_WORKS = {
+  eyebrow: "System",
   headline: "Tell Arx what you encounter. It does the rest.",
   steps: [
     {
@@ -52,6 +77,7 @@ export const HOW_IT_WORKS = {
 } as const;
 
 export const CORE_BEHAVIOURS = {
+  eyebrow: "Capabilities",
   headline: "Four things Arx does — and nothing else.",
   behaviours: [
     {
@@ -80,6 +106,7 @@ export const CORE_BEHAVIOURS = {
 } as const;
 
 export const CLOSING = {
+  eyebrow: "Final note",
   headline: "Your curiosity deserves better than forgetting.",
   body: "Arx is being built as a personal tool first — by someone who reads a lot, watches a lot, and remembers too little. If that sounds familiar, you're exactly who this is for.",
 } as const;
