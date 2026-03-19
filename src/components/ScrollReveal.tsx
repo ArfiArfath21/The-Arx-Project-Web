@@ -21,9 +21,10 @@ export default function ScrollReveal({
   const isInView = useInView(ref, { once, margin: "-80px" });
   const prefersReducedMotion = useReducedMotion();
 
-  const offset = 30;
+  const offset = 34;
   const initial = {
     opacity: 0,
+    filter: "blur(14px)",
     ...(direction === "up" && { y: offset }),
     ...(direction === "left" && { x: offset }),
     ...(direction === "right" && { x: -offset }),
@@ -31,6 +32,7 @@ export default function ScrollReveal({
 
   const animate = {
     opacity: isInView ? 1 : 0,
+    filter: isInView ? "blur(0px)" : "blur(14px)",
     y: isInView ? 0 : direction === "up" ? offset : 0,
     x: isInView
       ? 0
@@ -51,9 +53,9 @@ export default function ScrollReveal({
       initial={initial}
       animate={animate}
       transition={{
-        duration: 0.7,
+        duration: 0.85,
         delay,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.2, 0.72, 0.2, 1],
       }}
       className={clsx(className)}
     >

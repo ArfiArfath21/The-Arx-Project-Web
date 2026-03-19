@@ -9,10 +9,10 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <div className="relative isolate">
       <BackgroundEffects />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Problem />
         <HowItWorks />
@@ -20,6 +20,6 @@ export default function App() {
         <Closing />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
